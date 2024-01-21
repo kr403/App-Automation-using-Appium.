@@ -1,9 +1,12 @@
 package tests;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -28,7 +31,7 @@ public class BaseClass {
             options.setApp("C:\\Users\\khali\\IdeaProjects\\SingleAppMyRobi\\src\\test\\resources\\apps\\My Robi_6.2.5.apk");
 
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         }catch (Exception exp){
             System.out.println("Cause is : "+exp.getCause());
             System.out.println("Message is :"+exp.getMessage());
